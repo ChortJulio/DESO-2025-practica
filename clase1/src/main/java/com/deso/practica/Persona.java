@@ -1,9 +1,14 @@
 package com.deso.practica;
 
-public class Persona {
+public class Persona implements Acariciable {
     private String nombre;
     private String apellido;
     private Integer edad;
+
+    @Override
+    public void acariciar() {
+        System.out.println("relajante....");
+    }
 
     public String getApellido() {
         return apellido;

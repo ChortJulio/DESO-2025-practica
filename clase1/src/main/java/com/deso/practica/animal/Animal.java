@@ -1,12 +1,19 @@
 package com.deso.practica.animal;
 
-public abstract class Animal {
+import com.deso.practica.Acariciable;
+
+public abstract class Animal implements Acariciable {
 
     protected String nombre;
     protected Integer cantPatas;
     protected TipoAnimal tipo;
 
     protected abstract void hacerSonido();
+
+    @Override
+    public void acariciar() {
+        System.out.println("animal acariciado");
+    }
 
     public void setCantPatas(Integer cantPatas) {
         this.cantPatas = cantPatas;
