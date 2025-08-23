@@ -1,7 +1,7 @@
 package com.deso.practica.animal;
 
 public enum TipoAnimal {
-    MAMIFERO,
-    REPTIL,
-    ANFIBIO
+  MAMIFERO,
+  REPTIL,
+  ANFIBIO
 }
