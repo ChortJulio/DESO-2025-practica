@@ -8,7 +8,7 @@ public abstract class Animal implements Acariciable {
     protected Integer cantPatas;
     protected TipoAnimal tipo;
 
-    protected abstract void hacerSonido();
+    public abstract void hacerSonido();
 
     @Override
     public void acariciar() {
