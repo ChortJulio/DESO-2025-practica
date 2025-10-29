@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.2.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./mysql_init:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    networks:
+      - mynetwork
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 8086:80
+    depends_on:
+      - mysql
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
