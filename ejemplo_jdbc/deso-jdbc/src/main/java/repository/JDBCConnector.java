@@ -1,11 +1,6 @@
 package repository;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.sql.*;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class JDBCConnector {
 

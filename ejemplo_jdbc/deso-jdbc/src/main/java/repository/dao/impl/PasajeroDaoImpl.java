@@ -12,14 +12,10 @@ import java.util.Optional;
 
 public class PasajeroDaoImpl implements PasajeroDao {
 
-    public static final JDBCConnector jdbcConnector;
+    public final JDBCConnector jdbcConnector;
 
-    static {
-        try {
-            jdbcConnector = JDBCConnector.getInstance();
-        } catch (SQLException e) {
-            throw new RuntimeException("No se pudo conectar a la base de datos");
-        }
+    public PasajeroDaoImpl(JDBCConnector jdbcConnector) {
+        this.jdbcConnector = jdbcConnector;
     }
 
     @Override
